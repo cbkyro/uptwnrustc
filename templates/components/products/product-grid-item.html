@@ -1,0 +1,66 @@
+<article class="product-grid-item product-block" data-product-title="{{name}}" data-product-id="{{id}}">
+  <figure class="product-item-thumbnail">
+    {{#if price.saved}}
+      {{#unless out_of_stock_message}}
+        <div class="product-badge">{{lang 'product.sale'}}</div>
+      {{/unless}}
+    {{/if}}
+    {{#if out_of_stock_message}}
+      <div class="product-badge sold-out"><span class="message">{{out_of_stock_message}}</span></div>
+    {{/if}}
+    <a href="{{url}}">
+      <div class="product-item-thumbnail-image" data-product-href="{{url}}" style="background-image: url({{getImage image 'thumb' (cdn default_image)}})"></div>
+      <img class="sr-only" src="{{getImage image 'thumb' (cdn default_image)}}" alt="{{image.alt}}" />
+      <div class="product-item-mask">
+        <div class="product-item-actions">
+          {{#if show_rating}}
+            {{#if rating}}
+              <p class="product-item-rating">
+                <span class="rating-title">{{rating}} {{lang 'product.stars'}}</span>
+                {{> components/products/ratings rating=rating}}
+              </p>
+            {{/if}}
+
+            {{{snippet 'product_rating'}}}
+          {{/if}}
+
+          {{#if quick_shop}}
+            <button class="button button-secondary button-short" data-quick-shop data-product-id="{{id}}">
+              {{lang 'product.quick_view'}}
+            </button>
+          {{else}}
+            <a href="{{url}}" class="button button-secondary button-short" >
+              {{lang 'product.view_product'}}
+            </a>
+          {{/if}}
+
+          {{#if show_compare}}
+            <label class="button button-short form-label product-item-compare" for="compare-{{id}}">
+              {{> components/common/compare-checkbox}}
+              <span class="form-label-text">
+                {{lang "product.compare"}}
+                <svg class="icon icon-check-mark"><use xlink:href="#icon-check-mark" /></svg>
+              </span>
+            </label>
+          {{/if}}
+        </div>
+      </div>
+    </a>
+  </figure>
+
+  <div class="product-item-details">
+    {{#if brand.name}}
+      <div class="product-item-brand">{{brand.name}}</div>
+    {{/if}}
+    <h5 class="product-item-title">
+      <a href="{{url}}" alt="{{name}}">{{name}}</a>
+    </h5>
+
+    <div class="product-item-price" data-product-price="{{price.without_tax.formatted}}">
+      {{> components/products/price
+        price=price
+        as_low_as=as_low_as
+      }}
+    </div>
+  </div>
+</article>

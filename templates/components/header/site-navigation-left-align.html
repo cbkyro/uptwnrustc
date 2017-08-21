@@ -7,3 +7,34 @@
     {{> svg/search}}
   </button>
 </div>
+
+<!-- Account -->
+{{#if settings.account_creation_enabled}}
+  <div class="customer-links search-button-wrap">
+    {{#if customer}}
+      {{#contains page_type 'account'}}
+        <a class="top-bar-button" href="{{urls.auth.logout}}">
+          {{> svg/account}}
+          <span class="button-text">{{lang 'header.log_out'}}</span>
+        </a>
+      {{else}}
+        <a class="top-bar-button" href="{{urls.account.index}}">
+          {{> svg/account}}
+          <span class="button-text">{{lang 'header.account'}}</span>
+        </a>
+      {{/contains}}
+    {{else}}
+      <a class="top-bar-butto" href="{{urls.auth.login}}" data-toggle-login-modal>
+        {{> svg/account}}
+      </a>
+    {{/if}}
+  </div>
+{{/if}}
+
+<!-- Cart -->
+<button class="top-bar-button button-cart-toggle search-button-wrap">
+     <span class="mini-cart-subtotal button-text" data-cart-subtotal="{{cart.sub_total.value}}">
+         {{cart.sub_total.formatted}}
+     </span>
+     {{> svg/cart}}
+</button>

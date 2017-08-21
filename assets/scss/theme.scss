@@ -9611,6 +9611,7 @@ th {
 /* scss-combine:layout/header */
 .site-header {
   @include font-switcher($header-use-primary-font);
+  font-weight: 700;
   position: fixed;
   top: 0;
   z-index: 900;
@@ -9786,6 +9787,10 @@ th {
   .button-text {
     vertical-align: top;
   }
+  
+  .search-button-wrap {
+    
+  }
 }
 
 .currency-selector {
@@ -9938,7 +9943,8 @@ th {
   > .container {
     display: block;
     width: 100%;
-    max-width: 1230px;
+    // max-width: 1230px;
+    max-width: 100%;
     height: $navbar-height;
     text-align: $header-logo-alignment;
     transition: height $transition-navbar;
@@ -9962,7 +9968,7 @@ th {
       text-align: right;
     }
 
-    .logo-align-left { float: left; }
+    .logo-align-left { float: left; width: 381px;}
 
     .logo-align-center & { display: none; }
 
@@ -10105,10 +10111,12 @@ th {
     padding: rem-calc(16 0);
     display: block;
     color: $color-nav;
-    font-size: rem-calc(13);
+    font-size: rem-calc(16);
     letter-spacing: 0.077em;
     text-transform: uppercase;
-    transition: color 0.3s linear, background-color 0.3s linear, padding 0.2s linear, height 0.2s linear;
+    border-top: thin solid #ffffff;
+    border-bottom: thin solid #ffffff;
+    transition: color 0.1s linear, background-color 0.3s linear, padding 0.2s linear, height 0.2s linear, border 0.1s linear;
 
     @include media($min: 1230px) {
       padding: rem-calc(16 $main-nav-spacing);
@@ -10116,6 +10124,8 @@ th {
 
     &:hover:not(.pages) {
       color: $color-accent;
+      border-top: thin solid $color-nav;
+      border-bottom: thin solid $color-nav;
     }
 
     &.pages {
@@ -10338,6 +10348,7 @@ th {
   float: right;
   height: 100%;
   text-align: right;
+  padding-top: 0;
 
   @include media($max: $breakpoint-m) {
     width: span(1);

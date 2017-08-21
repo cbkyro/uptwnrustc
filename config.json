@@ -101,7 +101,7 @@
         "height": 1000
       }
     },
-    "global-show-home-in-nav": true,
+    "global-show-home-in-nav": false,
     "global-show-pages-in-nav": true,
     "global-show-categories-in-nav": true,
     "shop-menu-categories-display-type": "shop-menu-meganav",
@@ -230,9 +230,9 @@
       },
       "settings": {
         "primary-font": "Google_Roboto+Slab_700,400,300",
-        "secondary-font": "Google_Roboto+Condensed_400italic,400,300,700",
+        "secondary-font": "Google_Ubuntu_400,700",
         "header-use-primary-font": "false",
-        "color-accent": "#fc5f45",
+        "color-accent": "#f3c12d",
         "color-body": "#6b6e79",
         "color-background": "#ffffff",
         "color-background-secondary": "#eff1f5",
@@ -243,10 +243,10 @@
         "color-meta": "#b6bac2",
         "color-bold": "#2e3036",
         "color-link": "#6b6e79",
-        "color-link-hover": "#fc5f45",
+        "color-link-hover": "#f3c12d",
         "color-input": "#b6bac2",
         "color-button": "#ffffff",
-        "color-button-background": "#fc5f45",
+        "color-button-background": "#f3c12d",
         "color-button-background-hover": "#282a2f",
         "color-button-secondary": "#b6bac2",
         "color-button-secondary-background": "transparent",

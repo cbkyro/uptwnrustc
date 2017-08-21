@@ -9598,6 +9598,7 @@ th {
     max-width: 820px;
   }
 }
+.container.wide { max-width: 100%; width: 100%; padding: 0 30px; }
 
 .section {
   padding: $section-padding 0;

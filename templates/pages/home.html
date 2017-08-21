@@ -21,6 +21,8 @@ blog:
   {{/if}}
 
   {{{snippet 'home_content'}}}
+  
+  {{> components/home/01-highlight }}
 
   {{#if products.new}}
     <section class="products-new section">
@@ -123,6 +125,8 @@ blog:
       </section>
     {{/unless}}
   {{/if}}
+  
+  {{> components/home/03-banners }}
 
   {{#if theme_settings.home-show-brands}}
     <section class="brand-list section">

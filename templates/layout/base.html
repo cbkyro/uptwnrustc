@@ -10,6 +10,21 @@
     <script src="{{cdn '/assets/js/modernizr.js'}}"></script>
 
     {{{stylesheet '/assets/css/theme.css'}}}
+    
+    <!-- Custom Design -->
+    	{{{stylesheet '/assets/css/bootstrap.css'}}}
+    	{{{stylesheet '/assets/css/font-awesome.css'}}}
+    	{{{stylesheet '/assets/css/animated.css'}}}
+    	{{{stylesheet '/assets/css/owl-carousel.css'}}}
+    	{{{stylesheet '/assets/css/mmenu.css'}}}
+    	{{{stylesheet '/assets/css/pe-icon-7-stroke.css'}}}
+    	{{{stylesheet '/assets/css/noJS.css'}}}
+    	{{{stylesheet '/assets/css/prettyPhoto.css'}}}
+    	
+    	{{{stylesheet '/assets/css/main.css'}}}
+    	{{{stylesheet '/assets/css/home.css'}}}
+    
+    
     {{ getFontsCollection }}
 
     {{{head.scripts}}}
@@ -34,7 +49,7 @@
     {{/if}}
 
     <div class="icons-svg-sprite">{{> components/common/icons/icon-defs}}</div>
-    <div class="site-wrapper">
+    <div class="site-wrapper sn-site">
       {{{snippet 'header'}}}
 
       {{> components/header/header}}
@@ -96,6 +111,26 @@
     <script>
       window.stencilBootstrap("{{template_file}}", {{jsContext}}).load();
     </script>
+    
+    
+	<!-- Custom Design -->
+	    <script src="{{cdn '/assets/js/jquery-2.1.4.min.js'}}"></script>
+	    <script src="{{cdn '/assets/js/bootstrap.min.js'}}"></script>
+	    <script src="{{cdn '/assets/js/wow.min.js'}}"></script>
+	    <script src="{{cdn '/assets/js/owl.carousel.min.js'}}"></script>
+	    <script src="{{cdn '/assets/js/jquery.mmenu.all.min.js'}}"></script>
+	    <script src="{{cdn '/assets/js/jquery.countdown.min.js'}}"></script>
+	    <script src="{{cdn '/assets/js/jquery.appear.min.js'}}"></script>
+	    <script src="{{cdn '/assets/js/jquery.countTo.min.js'}}"></script>
+	    <script src="{{cdn '/assets/js/jquery.hoverdir.js'}}"></script>
+	    <script src="{{cdn '/assets/js/modernizr.custom.97074.js'}}"></script>
+	    <script src="{{cdn '/assets/js/isotope.pkgd.min.js'}}"></script>
+	    <script src="{{cdn '/assets/js/fit-columns.js'}}"></script>
+	    <script src="{{cdn '/assets/js/isotope-docs.min.js'}}"></script>
+	    <script src="{{cdn '/assets/js/mansory.js'}}"></script>
+	    <script src="{{cdn '/assets/js/jquery.prettyPhoto.js'}}"></script>
+	    <script src="{{cdn '/assets/js/main.min.js'}}"></script>
+	
 
     {{{footer.scripts}}}
     {{{snippet 'footer'}}}

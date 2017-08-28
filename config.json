@@ -117,7 +117,7 @@
     "footer-show-address": true,
     "footer-show-categories": false,
     "home-carousel-aspect-ratio": "ratio-natural",
-    "home-show-blog": true,
+    "home-show-blog": false,
     "home-blog-summary-length": 250,
     "home-new-products": 4,
     "home-featured-products": 8,

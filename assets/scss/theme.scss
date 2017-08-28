@@ -7101,7 +7101,8 @@ th {
   @extend %clearfix;
   padding: 0 $gutter;
   text-align: center;
-  background: $color-background-secondary;
+  // background: $color-background-secondary;
+  background: #f9e096;
 }
 
 .banners-bottom {
@@ -7112,10 +7113,13 @@ th {
 
 .banner {
   max-width: $max-width;
-  padding: $gutter 0;
+  // padding: $gutter 0;
+  padding: 5px 0;
   margin: 0 auto;
   text-align: center;
   border-bottom: 1px solid $color-border;
+  
+  p { margin: 0; }
 
   // override default rte colors
   h1,
@@ -7560,7 +7564,8 @@ th {
 }
 
 .button-mobile-nav-toggle {
-  right: 10px;
+  // right: 10px;
+  left: 10px;
   height: 28px;
 
   @include media($min: $breakpoint-s) { display: none; }
@@ -7600,7 +7605,8 @@ th {
   position: absolute;
   top: 50%;
   transform: translateY(-38%);
-  right: 55px;
+  // right: 55px;
+  right: 25px;
   height: 28px;
 
   &.has-promo {
@@ -9636,6 +9642,10 @@ th {
   z-index: 10;
   background-color: $color-topbar-background;
   color: $color-topbar-text;
+  
+  @include media($min: $breakpoint-m) {
+    display: none;
+  }
 
   .icon {
     @extend %inline-middle;
@@ -9670,7 +9680,7 @@ th {
 
 .top-bar-button {
   display: inline-block;
-  vertical-align: top;
+  // vertical-align: top;
   height: $topbar-height;
   padding-top: rem-calc(20px);
   color: inherit;
@@ -9705,7 +9715,8 @@ th {
 }
 
 .top-bar-center {
-  width: 100%;
+  // width: 100%;
+  width: 50vw;
 
   .site-branding {
     max-height: $navbar-height;
@@ -9720,6 +9731,19 @@ th {
       max-height: calc(#{$navbar-height} - 1rem);
       padding: 20px 0;
       vertical-align: middle;
+      
+      @include media($min: $breakpoint-xs) {
+        display: none;
+      }
+    }
+    
+    .logo-mobile {
+      display: none;
+      
+      @include media($max: $breakpoint-m) {
+        display: block;
+        margin: 0 auto;
+      }
     }
 
     @include media($min: $breakpoint-s) {
@@ -9771,7 +9795,7 @@ th {
 
 .customer-links {
   position: relative;
-  margin-right: rem-calc(20px);
+  // margin-right: rem-calc(20px);
 
   &:after {
     @extend %top-bar-sep;
@@ -10006,6 +10030,14 @@ th {
     vertical-align: middle;
     padding: 10px 0;
   }
+  
+  .logo-mobile {
+      display: none;
+      
+      @include media($max: $breakpoint-s) {
+        display: block;
+      }
+    }
 
   .site-branding-title {
     display: inline-block;
@@ -10022,7 +10054,8 @@ th {
     height: 100%;
     margin-left: gutter();
     text-align: center;
-    width: span(8);
+    // width: span(8);
+    width: span(60%) !important;
 
     .logo-align-right & {
       float: left;
@@ -10350,10 +10383,12 @@ th {
   height: 100%;
   text-align: right;
   padding-top: 0;
+  margin-left: rem-calc(20px);
 
   @include media($max: $breakpoint-m) {
     width: span(1);
     color: $color-nav;
+    margin-left: 0;
   }
 
   &:before {

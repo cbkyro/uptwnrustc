@@ -1181,6 +1181,8 @@ body .sn-site .bg-f5-p-20 {
 /*
  * banner shortcode
  */
+.home-1-highlight { margin: 15px 0; }
+
 .banner-shortcode-wrap {
   background-color: #ffffff;
 }
@@ -6692,8 +6694,8 @@ a.btn:hover,
   width: 100%;
 }
 .cart section {
-  display: inline-block;
-  width: 100%;
+  // display: inline-block;
+  // width: 100%;
 }
 .cart .cart-form {
   border-bottom: 1px solid #eee;

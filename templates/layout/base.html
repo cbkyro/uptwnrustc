@@ -62,16 +62,6 @@
             {{> components/common/breadcrumbs breadcrumbs}}
           {{/contains}}
 
-          {{#if banners.top}}
-            <div class="banners banners-top">
-              {{#each banners.top}}
-                <div class="banner rte">
-                  {{{this}}}
-                </div>
-              {{/each}}
-            </div>
-          {{/if}}
-
           <main class="main-content">
             {{#block "page"}}{{/block}}
           </main>

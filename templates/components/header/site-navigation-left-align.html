@@ -2,11 +2,13 @@
 
 {{> components/header/site-navigation show_search=false}}
 
-<div class="search-button-wrap">
-  <button class="button-search-toggle">
-    {{> svg/search}}
-  </button>
-</div>
+<!-- Cart -->
+<button class="top-bar-button button-cart-toggle search-button-wrap">
+     <span class="mini-cart-subtotal button-text" data-cart-subtotal="{{cart.sub_total.value}}">
+         {{cart.sub_total.formatted}}
+     </span>
+     {{> svg/cart}}
+</button>
 
 <!-- Account -->
 {{#if settings.account_creation_enabled}}
@@ -24,17 +26,15 @@
         </a>
       {{/contains}}
     {{else}}
-      <a class="top-bar-butto" href="{{urls.auth.login}}" data-toggle-login-modal>
+      <a class="top-bar-button" href="{{urls.auth.login}}" data-toggle-login-modal>
         {{> svg/account}}
       </a>
     {{/if}}
   </div>
 {{/if}}
 
-<!-- Cart -->
-<button class="top-bar-button button-cart-toggle search-button-wrap">
-     <span class="mini-cart-subtotal button-text" data-cart-subtotal="{{cart.sub_total.value}}">
-         {{cart.sub_total.formatted}}
-     </span>
-     {{> svg/cart}}
-</button>
+<div class="search-button-wrap">
+  <button class="button-search-toggle">
+    {{> svg/search}}
+  </button>
+</div>

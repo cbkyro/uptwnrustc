@@ -4135,8 +4135,7 @@ $roboto-slab: 'Roboto Slab', serif;
 $topbar-height: rem-calc(56px);
 $navbar-height: rem-calc(100px);
 $compressed-navbar-height: rem-calc(56);
-// $expanded-nav-height: $topbar-height + $navbar-height;
-$expanded-nav-height: $navbar-height;
+$expanded-nav-height: $topbar-height + $navbar-height;
 $modal-width-narrow: rem-calc(684px);
 $section-padding: rem-calc(80px);
 $blog-index-width: rem-calc(645px);
@@ -7162,12 +7161,9 @@ th {
 
   .button-checkout {
     @extend %button-inverse;
-    background: #a7cf6b;
   }
 }
-.button-checkout {
-    background: #a7cf6b;
-  }
+
 .mini-cart-inner {
   position: relative;
   top: 0;
@@ -9735,11 +9731,15 @@ th {
       max-height: calc(#{$navbar-height} - 1rem);
       padding: 20px 0;
       vertical-align: middle;
-
-      display: none;
+      
+      @include media($min: $breakpoint-xs) {
+        display: none;
+      }
     }
+    
     .logo-mobile {
-        
+      display: none;
+      
       @include media($max: $breakpoint-m) {
         display: block;
         margin: 0 auto;
@@ -9811,6 +9811,10 @@ th {
 
   .button-text {
     vertical-align: top;
+  }
+  
+  .search-button-wrap {
+    
   }
 }
 
@@ -10028,12 +10032,12 @@ th {
   }
   
   .logo-mobile {
-    display: none;
-    
-    @include media($max: $breakpoint-s) {
-      display: block;
+      display: none;
+      
+      @include media($max: $breakpoint-s) {
+        display: block;
+      }
     }
-  }
 
   .site-branding-title {
     display: inline-block;
@@ -10141,10 +10145,12 @@ th {
     padding: rem-calc(16 0);
     display: block;
     color: $color-nav;
-    font-size: rem-calc(13);
+    font-size: rem-calc(16);
     letter-spacing: 0.077em;
     text-transform: uppercase;
-    transition: color 0.3s linear, background-color 0.3s linear, padding 0.2s linear, height 0.2s linear;
+    border-top: thin solid #ffffff;
+    border-bottom: thin solid #ffffff;
+    transition: color 0.1s linear, background-color 0.3s linear, padding 0.2s linear, height 0.2s linear, border 0.1s linear;
 
     @include media($min: 1230px) {
       padding: rem-calc(16 $main-nav-spacing);
@@ -10152,6 +10158,8 @@ th {
 
     &:hover:not(.pages) {
       color: $color-accent;
+      border-top: thin solid $color-nav;
+      border-bottom: thin solid $color-nav;
     }
 
     &.pages {
@@ -10635,7 +10643,6 @@ $color-footer-background-contrast: contrast($color-footer-background, 90%);
 
 .footer-site-copyright {
   margin-top: 42px;
-  margin-bottom: 42px;
 }
 
 .footer-theme-credits {
@@ -10745,16 +10752,6 @@ $color-footer-background-contrast: contrast($color-footer-background, 90%);
   }
 }
 
-.newsletter-signup {  
-  padding: 155px 0;
-  
-  @include media($max: $breakpoint-s) {
-    padding: 45px 0;
-  }
-  
-  h3 { color: #ffffff; text-transform: uppercase; }
-  p { color: #ffffff; text-align: center; margin: -30px 0 30px 0; }
-}
 /* scss-combine:pages/compare */
 /*----------  Top-bar Tab  ----------*/
 
@@ -11222,8 +11219,6 @@ $color-footer-background-contrast: contrast($color-footer-background, 90%);
     width: 12px;
     height: 12px;
   }
-  
-  .icon-close { fill: red; }
 }
 
 /*----------  Gift Wrapping  ----------*/

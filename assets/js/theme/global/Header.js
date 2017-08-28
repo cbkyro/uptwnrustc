@@ -192,9 +192,11 @@ export default class Header {
 
   _adjustHeights() {
     const $canvas = this.$body.find('.site-canvas');
-    const defaultTopBarHeight = 56;
+    // const defaultTopBarHeight = 56;
+    const defaultTopBarHeight = 0;
     const topBarHeight = this.$topBar.outerHeight();
-    const defaultFullHeaderHeight = 156;
+    // const defaultFullHeaderHeight = 156;
+    const defaultFullHeaderHeight = 101;
     const currentFullHeaderHeight = this.$header.outerHeight();
 
     if (this.$navBar.is(':hidden')) {
